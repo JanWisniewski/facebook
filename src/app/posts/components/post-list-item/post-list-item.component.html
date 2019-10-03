@@ -1,7 +1,20 @@
-<div class="card" style="width: 18rem;" appHighlight>
-<!--  <img src="..." class="card-img-top" alt="...">-->
+<div class="card my-3" appHighlight>
+  <div class="card-header d-flex align-items-start">
+    <img
+      [src]="getPostAuthorAvatarUrl()"
+      class="avatar mr-3 rounded"
+      alt
+    >
+    <div class="flex-fill">
+      <h4>{{ post.author.name }}</h4>
+      <a [routerLink]="getPostUrl()">
+        <small>{{ post.createdTime }}</small>
+      </a>
+    </div>
+  </div>
+  <img [src]="post.images[0]" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{post.id}}</h5>
+    <!--    <h5 class="card-title">{{post.id}}</h5>-->
     <p class="card-text">{{post.body}}</p>
   </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import fakePosts from '../../../../fakes/fake-posts';
+
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -7,10 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  posts = [
-    { id: '1', body: 'abc'},
-    { id: '2', body: 'abcd'}
-  ];
+  posts = fakePosts;
 
   constructor() { }
 
