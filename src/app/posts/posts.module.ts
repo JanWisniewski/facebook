@@ -7,6 +7,7 @@ import { PostListItemComponent } from './components/post-list-item/post-list-ite
 import {SharedModule} from '../shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
 import { PostProfilePageComponent } from './pages/post-profile-page/post-profile-page.component';
+import {CommentsModule} from '../comments/comments.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PostProfilePageComponent } from './pages/post-profile-page/post-profile
     CommonModule,
     PostsRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    CommentsModule
   ]
 })
 export class PostsModule { }
