@@ -14,10 +14,18 @@ export class PostListItemComponent implements OnInit {
   }
 
   getPostUrl() {
-    return `/posts/${this.post.id}`;
+    if (this.post) {
+      return `/posts/${this.post.id}`;
+    } else {
+      return '';
+    }
   }
 
   getPostAuthorAvatarUrl() {
-    return this.post.author.avatarUrl;
+    if (this.post && this.post.author) {
+      return this.post.author.avatarUrl;
+    } else {
+      return '';
+    }
   }
 }
