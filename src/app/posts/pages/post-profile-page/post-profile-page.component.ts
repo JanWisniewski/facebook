@@ -28,7 +28,6 @@ export class PostProfilePageComponent implements OnInit {
 
   private async setupPost() {
     const postId = this.route.snapshot.params.postId;
-    console.log(postId);
     const post =  await this.postsService.getPostById(postId);
 
     if (!post) {
