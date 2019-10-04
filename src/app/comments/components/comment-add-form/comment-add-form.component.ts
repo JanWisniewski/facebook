@@ -30,15 +30,15 @@ export class CommentAddFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(addForm) {
     const comment = Object.assign({}, this.comment);
     comment.id = uuid.v4();
     comment.createdTime = new Date().toString();
     comment.author.id = uuid.v4();
     comment.author.name = faker.name.findName();
     comment.author.avatarUrl = `http://placeskull.com/50/50/000000`;
-    console.log('submit', comment);
     this.addComment.emit(comment);
+    addForm.reset();
   }
 
 }
