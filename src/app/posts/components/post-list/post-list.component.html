@@ -1,5 +1,14 @@
 <app-post-add-form (addPost)="addPost($event)"></app-post-add-form>
 
 <app-post-list-item *ngFor="let post of posts"
-                    [post]="post" (removePost)="removePost($event)">
+                    [post]="post" (removePost)="removePostWithConfirmation($event)">
 </app-post-list-item>
+
+<app-popup #dialog>
+  <p class="title">Hello</p>
+  <p class="body">Chcesz to zrobić?</p>
+  <p class="buttons">
+    <button class="btn btn-danger" (click)="removePost()">Usuń</button>
+    <button class="btn btn-light" (click)="dialog.hide()">Anuluj</button>
+  </p>
+</app-popup>

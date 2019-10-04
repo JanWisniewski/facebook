@@ -1,0 +1,30 @@
+<div class="modal-open">
+
+  <div
+    class="modal"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div
+      class="modal-dialog modal-dialog-centered"
+      role="document"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <ng-content select=".title"></ng-content>
+          </h5>
+        </div>
+        <div class="modal-body">
+          <ng-content select=".body"></ng-content>
+        </div>
+        <div class="modal-footer">
+          <ng-content select=".buttons"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop show"></div>
+
+</div>
