@@ -11,6 +11,12 @@
           <button type="submit" class="btn btn-primary">Dodaj</button>
         </div>
       </div>
+      <div class="row col-12">
+        <small *ngIf="body.invalid && body.dirty" class="text-danger">
+          <span *ngIf="body.errors.required">Aby dodać komentarz, wpisz tekst</span>
+          <span *ngIf="body.errors.minlength">Za mało znaków!</span>
+        </small>
+      </div>
     </form>
   </div>
 </div>

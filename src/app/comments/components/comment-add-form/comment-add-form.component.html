@@ -2,11 +2,16 @@
   <div class="form-group row">
     <div class="col-10">
       <div class="form-group">
-        <input type="comment" class="form-control" name="body" placeholder="Wpisz komentarz..." [(ngModel)]="comment.body">
+        <input type="comment" class="form-control" name="body" placeholder="Wpisz komentarz..."
+               [(ngModel)]="comment.body" required="true" #body="ngModel" minlength="2">
+        <small *ngIf="body.errors && body.dirty" class="text-danger">
+          <span *ngIf="body.errors.required">Aby dodać komentarz, wpisz tekst</span>
+          <span *ngIf="body.errors.minlength">Za mało znaków!</span>
+        </small>
       </div>
     </div>
     <div class="col-2">
-      <button type="submit" class="btn btn-primary">Dodaj</button>
+      <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Dodaj</button>
     </div>
   </div>
 </form>

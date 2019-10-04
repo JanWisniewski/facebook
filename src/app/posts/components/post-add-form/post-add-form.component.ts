@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import uuid from 'uuid';
 import faker from 'faker';
 
@@ -11,9 +11,16 @@ import faker from 'faker';
 export class PostAddFormComponent implements OnInit {
 
   addPostForm = new FormGroup({
-      body: new FormControl()
+      body: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2)
+      ])
     }
   );
+
+  get body() {
+    return this.addPostForm.get('body');
+  }
 
   @Output()
   addPost = new EventEmitter();
