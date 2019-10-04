@@ -20,4 +20,8 @@ export class CommentListComponent implements OnInit {
     this.comments.push(comment);
   }
 
+  onClick(id) {
+    const id1 = this.comments.indexOf(id);
+    this.comments.splice(id1, 1);
+  }
 }

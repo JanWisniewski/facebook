@@ -12,6 +12,7 @@
           <small>{{ post.createdTime | myDate }}</small>
         </a>
       </div>
+      <button class="btn-danger" (click)="onClick()">Usuń</button>
     </div>
     <img [src]="post.images[0]" class="card-img-top" alt="...">
     <div class="card-body">

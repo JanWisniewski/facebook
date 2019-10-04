@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IComment} from '../../../shared/interfaces/comment.interface';
 
 @Component({
@@ -9,6 +9,7 @@ import {IComment} from '../../../shared/interfaces/comment.interface';
 export class CommentListItemComponent implements OnInit {
 
   @Input() comment: IComment = null;
+  @Output() delete = new EventEmitter();
 
   constructor() { }
 
@@ -23,4 +24,7 @@ export class CommentListItemComponent implements OnInit {
     }
   }
 
+  onClick() {
+    this.delete.emit(this.comment);
+  }
 }

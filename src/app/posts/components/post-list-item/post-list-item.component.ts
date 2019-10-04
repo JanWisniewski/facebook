@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {IPost} from '../../../shared/interfaces/post.interface';
 
 @Component({
@@ -8,6 +8,7 @@ import {IPost} from '../../../shared/interfaces/post.interface';
 })
 export class PostListItemComponent implements OnInit, OnChanges {
   @Input() post: IPost = null;
+  @Output() removePost = new EventEmitter();
 
   constructor() { }
 
@@ -34,5 +35,9 @@ export class PostListItemComponent implements OnInit, OnChanges {
     } else {
       return '';
     }
+  }
+
+  onClick() {
+    this.removePost.emit(this.post);
   }
 }

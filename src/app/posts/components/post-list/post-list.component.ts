@@ -19,4 +19,9 @@ export class PostListComponent implements OnInit {
   addPost(post: IPost) {
     this.posts.unshift(post);
   }
+
+  removePost(post) {
+    const post1 = this.posts.indexOf(post);
+    this.posts.splice(post1, 1);
+  }
 }
